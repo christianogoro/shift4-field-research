@@ -311,18 +311,23 @@
 
     <div class="section-label">Type of Cuisine</div>
     <div class="tap-grid three" id="typeGrid">
-      <div class="tap-card" onclick="selectSingle(this, 'typeGrid')" data-value="American">American</div>
-      <div class="tap-card" onclick="selectSingle(this, 'typeGrid')" data-value="Seafood">Seafood</div>
-      <div class="tap-card" onclick="selectSingle(this, 'typeGrid')" data-value="Italian">Italian</div>
-      <div class="tap-card" onclick="selectSingle(this, 'typeGrid')" data-value="Mexican">Mexican</div>
-      <div class="tap-card" onclick="selectSingle(this, 'typeGrid')" data-value="Asian">Asian</div>
-      <div class="tap-card" onclick="selectSingle(this, 'typeGrid')" data-value="Mediterranean">Mediterranean</div>
-      <div class="tap-card" onclick="selectSingle(this, 'typeGrid')" data-value="Steakhouse">Steakhouse</div>
-      <div class="tap-card" onclick="selectSingle(this, 'typeGrid')" data-value="Bar / Pub">Bar / Pub</div>
-      <div class="tap-card" onclick="selectSingle(this, 'typeGrid')" data-value="Cafe / Bistro">Cafe / Bistro</div>
-      <div class="tap-card" onclick="selectSingle(this, 'typeGrid')" data-value="Fine Dining">Fine Dining</div>
-      <div class="tap-card" onclick="selectSingle(this, 'typeGrid')" data-value="Farm-to-Table">Farm-to-Table</div>
-      <div class="tap-card" onclick="selectSingle(this, 'typeGrid')" data-value="Other">Other</div>
+      <div class="tap-card" onclick="toggleTypeMulti(this)" data-value="American">American</div>
+      <div class="tap-card" onclick="toggleTypeMulti(this)" data-value="Seafood">Seafood</div>
+      <div class="tap-card" onclick="toggleTypeMulti(this)" data-value="Italian">Italian</div>
+      <div class="tap-card" onclick="toggleTypeMulti(this)" data-value="Mexican">Mexican</div>
+      <div class="tap-card" onclick="toggleTypeMulti(this)" data-value="Asian">Asian</div>
+      <div class="tap-card" onclick="toggleTypeMulti(this)" data-value="Mediterranean">Mediterranean</div>
+      <div class="tap-card" onclick="toggleTypeMulti(this)" data-value="Steakhouse">Steakhouse</div>
+      <div class="tap-card" onclick="toggleTypeMulti(this)" data-value="Bar / Pub">Bar / Pub</div>
+      <div class="tap-card" onclick="toggleTypeMulti(this)" data-value="Cafe / Bistro">Cafe / Bistro</div>
+      <div class="tap-card" onclick="toggleTypeMulti(this)" data-value="Fine Dining">Fine Dining</div>
+      <div class="tap-card" onclick="toggleTypeMulti(this)" data-value="Farm-to-Table">Farm-to-Table</div>
+      <div class="tap-card" onclick="toggleTypeMulti(this)" data-value="Bakery">Bakery</div>
+      <div class="tap-card" onclick="toggleTypeMulti(this)" data-value="Deli / Sandwich">Deli / Sandwich</div>
+      <div class="tap-card" onclick="toggleTypeMulti(this)" data-value="Brunch / Breakfast">Brunch / Breakfast</div>
+      <div class="tap-card" onclick="toggleTypeMulti(this)" data-value="Pizza">Pizza</div>
+      <div class="tap-card" onclick="toggleTypeMulti(this)" data-value="BBQ">BBQ</div>
+      <div class="tap-card" onclick="toggleTypeMulti(this)" data-value="Other">Other</div>
     </div>
     <div class="field" id="otherTypeField" style="display:none;">
       <input type="text" id="otherType" placeholder="Describe cuisine / concept" autocapitalize="words">
@@ -486,13 +491,6 @@
       <input type="email" id="mgrEmail" placeholder="name@restaurant.com" inputmode="email">
     </div>
 
-    <div class="section-label">Best Time to Follow Up</div>
-    <div class="tap-grid three" id="followGrid">
-      <div class="tap-card" onclick="selectSingle(this, 'followGrid')" data-value="Morning">Morning</div>
-      <div class="tap-card" onclick="selectSingle(this, 'followGrid')" data-value="Afternoon">Afternoon</div>
-      <div class="tap-card" onclick="selectSingle(this, 'followGrid')" data-value="Evening">Evening</div>
-    </div>
-
     <div class="field">
       <label for="myNotes">My Rep Notes <span class="opt">(stays in your CSV)</span></label>
       <textarea id="myNotes" placeholder="Body language, buying signals, next step…"></textarea>
@@ -580,9 +578,6 @@ function selectSingle(el, gridId) {
   const grid = document.getElementById(gridId);
   grid.querySelectorAll('.tap-card').forEach(c => c.classList.remove('selected'));
   el.classList.add('selected');
-  if (gridId === 'typeGrid') {
-    document.getElementById('otherTypeField').style.display = el.dataset.value === 'Other' ? 'block' : 'none';
-  }
   if (gridId === 'posGrid') {
     document.getElementById('otherPOSField').style.display = el.dataset.value === 'Other' ? 'block' : 'none';
   }
@@ -590,6 +585,12 @@ function selectSingle(el, gridId) {
 
 function toggleMulti(el) {
   el.classList.toggle('selected');
+}
+
+function toggleTypeMulti(el) {
+  el.classList.toggle('selected');
+  const otherSelected = !!document.querySelector('#typeGrid .tap-card.selected[data-value="Other"]');
+  document.getElementById('otherTypeField').style.display = otherSelected ? 'block' : 'none';
 }
 
 function getSelectedValues(gridId) {
@@ -611,8 +612,13 @@ function setStars(n) {
 }
 
 function submitVisit() {
-  const typeVal = getSelectedValue('typeGrid');
-  const rest_type = typeVal === 'Other' ? (document.getElementById('otherType').value.trim() || 'Other') : typeVal;
+  const typeVals = getSelectedValues('typeGrid');
+  const nonOther = typeVals.filter(v => v !== 'Other');
+  let rest_type = nonOther.join(', ');
+  if (typeVals.includes('Other')) {
+    const other = document.getElementById('otherType').value.trim() || 'Other';
+    rest_type = rest_type ? rest_type + ', ' + other : other;
+  }
   const posVal = getSelectedValue('posGrid');
   const pos_system = posVal === 'Other' ? (document.getElementById('otherPOS').value.trim() || 'Other') : posVal;
 
@@ -635,7 +641,6 @@ function submitVisit() {
     mgr_title: document.getElementById('mgrTitle').value.trim(),
     mgr_phone: document.getElementById('mgrPhone').value.trim(),
     mgr_email: document.getElementById('mgrEmail').value.trim(),
-    best_followup: getSelectedValue('followGrid'),
     my_notes: document.getElementById('myNotes').value.trim()
   };
 
@@ -720,7 +725,7 @@ function confirmClear() {
 
 function downloadCSV() {
   if (!visits.length) { toast('No visits yet'); return; }
-  const headers = ['timestamp','rest_name','rest_type','year_established','num_locations','address','pos_system','satisfaction','years_on_pos','contract_end','pain_points','integrations','monthly_volume','wish_list','mgr_name','mgr_title','mgr_phone','mgr_email','best_followup','my_notes'];
+  const headers = ['timestamp','rest_name','rest_type','year_established','num_locations','address','pos_system','satisfaction','years_on_pos','contract_end','pain_points','integrations','monthly_volume','wish_list','mgr_name','mgr_title','mgr_phone','mgr_email','my_notes'];
   const rows = [headers.join(',')];
   visits.forEach(v => {
     rows.push(headers.map(h => {

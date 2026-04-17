@@ -61,6 +61,33 @@ Hit these **right when they open** — managers are in prep mode and free.
 - **Siesta Key Oyster Bar** — est. 1984 (42 years)
 - The 431 St. Armands Cir address (now Café on St. Armands) was Cafe L'Europe from 1973-2024 — 51 years. The POS inertia story writes itself.
 
+### 🔁 Fallback list — hit any of these if a primary stop doesn't work out
+*Grouped by cluster so you can slot one in without detouring. Hours not re-verified — tap the pin in Google Maps before driving.*
+
+**DOWNTOWN**
+- Marina Jack's — 2 Marina Plaza, Sarasota, FL 34236
+- State Street Eating House — 1533 State St, Sarasota, FL 34236
+- Main Bar Sandwich Shop — 1944 Main St, Sarasota, FL 34236
+- C'est La Vie Cafe — 1553 Main St, Sarasota, FL 34236
+
+**SOUTHSIDE**
+- Morton's Gourmet Market & Cafe — 1924 S Osprey Ave, Sarasota, FL 34239
+- Chutney's Etc. — 1963 Hillview St, Sarasota, FL 34239
+
+**ST. ARMANDS**
+- Speaks Clam Bar (St. Armands) — 29 N Blvd of the Presidents, Sarasota, FL 34236
+- Crab & Fin — 420 St Armands Cir, Sarasota, FL 34236
+
+**SIESTA KEY**
+- Miguel's Restaurant — 6631 Midnight Pass Rd, Sarasota, FL 34242
+- Ophelia's on the Bay — 9105 Midnight Pass Rd, Sarasota, FL 34242
+- Captain Curt's Crab & Oyster Bar — 1200 Old Stickney Point Rd, Sarasota, FL 34242
+- Sun Garden Cafe — 210 Avenida Madera, Sarasota, FL 34242
+
+**GULF GATE / S TAMIAMI**
+- Solórzano Bros Italian Pizzeria — 6574 Superior Ave, Sarasota, FL 34231
+- Word of Mouth Cafe — 6604 Gateway Ave, Sarasota, FL 34231
+
 ### Fallback — if time runs short
 Hit these **5 "gold" stops** minimum (2 all-day + 3 dinner-only covers the full Shift4 question set with max longevity angle):
 1. **Phillippi Creek** (1980, all-day) — easiest, on the way

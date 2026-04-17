@@ -2,7 +2,67 @@
 ## For Shift4 Solution Specialist Field Assignment — 2026-04-17
 
 **Goal:** Visit 3+ locally-owned, independent, full-service restaurants. No chains.
-**Minimum:** 3 visits. **Recommended:** 5-6 visits so you can pick the strongest 3 for the pitch.
+**Your plan:** 15-stop full-day loop from Gibsonton, FL — see below.
+
+---
+
+## 🚗 15-STOP ONE-DAY LOOP (from 13019 Waterbourne Dr, Gibsonton FL)
+
+**Total day:** ~6 hours (2h 40min driving + ~3-4 min per restaurant drive-between + 5-10 min per interview)
+**Driving waypoints:** 4 leg-parking spots — each leg is walkable once parked.
+
+### Driving sequence between clusters
+1. **Home** (Gibsonton, FL) → I-75 S
+2. **Park 1:** Downtown Sarasota — Palm Ave garage or 1st St street parking
+3. **Park 2:** Southside Village — S Osprey Ave (5 min south of downtown)
+4. **Park 3:** St. Armands Circle — public lot (12 min west over Ringling Bridge)
+5. **Park 4:** Siesta Key Village — Beach Road public lot (15 min south)
+6. **Stop 5:** Phillippi Creek Oyster Bar (direct stop on the way back up)
+7. **Home** (Gibsonton) via I-75 N
+
+### The 15 restaurants in walking order within each leg
+
+**LEG A — Downtown Sarasota** (5 stops, walk all from Palm Ave garage, ~75 min)
+1. **Bijou Café** — 1287 1st St — *est. 1986, 40 years*
+2. **Duval's Fresh. Local. Seafood.** — 1435 Main St
+3. **Selva Grill** — 1345 Main St
+4. **Louies Modern** — 1289 N Palm Ave
+5. **Owen's Fish Camp** — 516 Burns Ct
+
+**LEG B — Southside Village** (3 stops, walk all on S Osprey, ~45 min)
+
+6. **Michael's On East** — 1212 S East Ave — *est. 1987, 39 years*
+7. **Libby's Neighborhood Brasserie** — 1917 S Osprey Ave
+8. **Speaks Clam Bar** — 1850 S Osprey Ave
+
+**LEG C — St. Armands Circle** (3 stops, walk the circle, ~45 min)
+
+9. **Cafe L'Europe** — 431 St Armands Cir — *est. 1973, 53 years*
+10. **Blu Kouzina** — 15 N Blvd of the Presidents
+11. **Lynches Pub and Grub** — 19 N Blvd of the Presidents
+
+**LEG D — Siesta Key Village** (3 stops, walk Ocean Blvd, ~45 min)
+
+12. **Siesta Key Oyster Bar (SKOB)** — 5238 Ocean Blvd — *est. 1984, 42 years*
+13. **Blasé Cafe** — 5263 Ocean Blvd
+14. **The Cottage** — 153 Avenida Messina
+
+**BONUS — On the way home**
+
+15. **Phillippi Creek Oyster Bar** — 5353 S Tamiami Trail — *est. 1980, 46 years*
+
+### Timing plan
+- **Leave Gibsonton:** 9:30 AM
+- **Arrive Downtown:** 10:20 AM
+- **Legs A+B done:** ~12:00 PM (before restaurants hit hardcore lunch rush)
+- **Lunch break (yourself):** 12:00-1:30 PM — grab a bite at #14 The Cottage or skip to save time
+- **Legs C+D done:** ~3:30 PM (post-lunch-rush sweet spot for managers)
+- **Phillippi Creek stop:** ~4:00 PM
+- **Home:** ~5:00 PM
+
+### Fallback — if you run out of time
+Prioritize these **5 "gold" stops** (highest longevity story, strongest independents):
+- Cafe L'Europe (1973), Michael's On East (1987), Bijou Café (1986), Phillippi Creek (1980), Siesta Key Oyster Bar (1984)
 
 ---
 

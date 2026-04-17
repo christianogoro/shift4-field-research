@@ -6,63 +6,68 @@
 
 ---
 
-## 🚗 15-STOP ONE-DAY LOOP (from 13019 Waterbourne Dr, Gibsonton FL)
+## 🚗 12-STOP ONE-DAY LOOP (from 13019 Waterbourne Dr, Gibsonton FL)
 
-**Total day:** ~6 hours (2h 40min driving + ~3-4 min per restaurant drive-between + 5-10 min per interview)
-**Driving waypoints:** 4 leg-parking spots — each leg is walkable once parked.
+**Verified hours as of April 2026. Dropped since last revision:**
+- ❌ **Louies Modern** — permanently closed (Nov 2025)
+- ❌ **Speaks Clam Bar (Southside, 1850 S Osprey)** — that location is closed; brand now operates at St. Armands + Lakewood Ranch + Bradenton only
+- ❌ **Cafe L'Europe** — rebranded as "Café on St. Armands" (same address, new concept — kept as #3 below)
+- ⚠️ **Blasé Cafe** — skipped (opens 3pm, martini bar — less of a full-service restaurant feel)
 
-### Driving sequence between clusters
-1. **Home** (Gibsonton, FL) → I-75 S
-2. **Park 1:** Downtown Sarasota — Palm Ave garage or 1st St street parking
-3. **Park 2:** Southside Village — S Osprey Ave (5 min south of downtown)
-4. **Park 3:** St. Armands Circle — public lot (12 min west over Ringling Bridge)
-5. **Park 4:** Siesta Key Village — Beach Road public lot (15 min south)
-6. **Stop 5:** Phillippi Creek Oyster Bar (direct stop on the way back up)
-7. **Home** (Gibsonton) via I-75 N
+**Total day:** ~5.5 hours (2h 40min driving + 2h interviewing + walking)
 
-### The 15 restaurants in walking order within each leg
+### Two-window schedule (crucial — 5 of the 12 are DINNER-ONLY)
 
-**LEG A — Downtown Sarasota** (5 stops, walk all from Palm Ave garage, ~75 min)
-1. **Bijou Café** — 1287 1st St — *est. 1986, 40 years*
-2. **Duval's Fresh. Local. Seafood.** — 1435 Main St
-3. **Selva Grill** — 1345 Main St
-4. **Louies Modern** — 1289 N Palm Ave
-5. **Owen's Fish Camp** — 516 Burns Ct
+#### 🌤️ WINDOW 1 — Afternoon (1:30-4:30 PM): seven ALL-DAY spots
+Hit these while they're open continuously. Post-lunch-rush means managers are free.
 
-**LEG B — Southside Village** (3 stops, walk all on S Osprey, ~45 min)
+| # | Restaurant | Address | Hours (Mon-Fri) |
+|---|------------|---------|-----------------|
+| 1 | **Duval's Fresh. Local. Seafood.** | 1435 Main St (Downtown) | 11am-10pm daily |
+| 2 | **Libby's Neighborhood Brasserie** | 1917 S Osprey Ave (Southside) | 11am-9/10pm |
+| 3 | **Café on St. Armands** (rebrand of Cafe L'Europe) | 431 St Armands Cir | 10am-9pm Mon-Thu |
+| 4 | **Blu Kouzina** | 15 N Blvd of the Presidents (St. Armands) | 11:30am-9pm daily |
+| 5 | **Lynches Pub and Grub** | 19 N Blvd of the Presidents (St. Armands) | 11am-12am |
+| 6 | **Siesta Key Oyster Bar (SKOB)** | 5238 Ocean Blvd (Siesta Key) | 11am-11/12pm |
+| 7 | **The Cottage** | 153 Avenida Messina (Siesta Key) | 11am-10/11pm |
+| 8 | **Phillippi Creek Oyster Bar** | 5353 S Tamiami Trail | 11am-10pm daily |
 
-6. **Michael's On East** — 1212 S East Ave — *est. 1987, 39 years*
-7. **Libby's Neighborhood Brasserie** — 1917 S Osprey Ave
-8. **Speaks Clam Bar** — 1850 S Osprey Ave
+#### 🌆 WINDOW 2 — Early evening (4:00-6:30 PM): four DINNER-ONLY spots
+Hit these **right when they open** — managers are in prep mode and free.
+⚠️ **Bijou and Michael's are closed Monday.** Best day: Tue-Fri.
 
-**LEG C — St. Armands Circle** (3 stops, walk the circle, ~45 min)
+| # | Restaurant | Address | Opens |
+|---|------------|---------|-------|
+| 9 | **Owen's Fish Camp** | 516 Burns Ct (Downtown) | 4:00 PM |
+| 10 | **Selva Grill** | 1345 Main St (Downtown) | 4:00 PM — *has 2nd location, note but still qualifies* |
+| 11 | **Bijou Garden Cafe** (rebrand of Bijou Café) | 1287 1st St (Downtown) | 5:00 PM |
+| 12 | **Michael's On East** | 1212 S East Ave (Southside) | 5:00 PM |
 
-9. **Cafe L'Europe** — 431 St Armands Cir — *est. 1973, 53 years*
-10. **Blu Kouzina** — 15 N Blvd of the Presidents
-11. **Lynches Pub and Grub** — 19 N Blvd of the Presidents
+### Timing plan (Tuesday-Friday; skip Monday)
+- **1:00 PM** leave Gibsonton
+- **1:50 PM** arrive Downtown — **Duval's** (#1)
+- **2:25 PM** drive to Southside (7 min) — **Libby's** (#2)
+- **3:00 PM** drive to St. Armands (12 min over Ringling) — walk **Café on St. Armands → Blu Kouzina → Lynches** (#3-5)
+- **3:50 PM** drive to Siesta Key (15 min) — walk **SKOB → The Cottage** (#6-7)
+- **4:30 PM** drive to Phillippi Creek (10 min) — **Phillippi Creek** (#8)
+- **5:00 PM** drive back to Downtown (18 min) — **Owen's → Selva → Bijou Garden Cafe** (#9-11, all walkable from Palm Ave Garage)
+- **5:50 PM** drive to Southside (7 min) — **Michael's On East** (#12)
+- **6:45 PM** home via I-75 N
 
-**LEG D — Siesta Key Village** (3 stops, walk Ocean Blvd, ~45 min)
+### Longevity storyline for your pitch (gold data points)
+- **Bijou Garden Cafe** — est. 1986 (40 years)
+- **Michael's On East** — est. 1987 (39 years)
+- **Phillippi Creek** — est. 1980 (46 years)
+- **Siesta Key Oyster Bar** — est. 1984 (42 years)
+- The 431 St. Armands Cir address (now Café on St. Armands) was Cafe L'Europe from 1973-2024 — 51 years. The POS inertia story writes itself.
 
-12. **Siesta Key Oyster Bar (SKOB)** — 5238 Ocean Blvd — *est. 1984, 42 years*
-13. **Blasé Cafe** — 5263 Ocean Blvd
-14. **The Cottage** — 153 Avenida Messina
-
-**BONUS — On the way home**
-
-15. **Phillippi Creek Oyster Bar** — 5353 S Tamiami Trail — *est. 1980, 46 years*
-
-### Timing plan
-- **Leave Gibsonton:** 9:30 AM
-- **Arrive Downtown:** 10:20 AM
-- **Legs A+B done:** ~12:00 PM (before restaurants hit hardcore lunch rush)
-- **Lunch break (yourself):** 12:00-1:30 PM — grab a bite at #14 The Cottage or skip to save time
-- **Legs C+D done:** ~3:30 PM (post-lunch-rush sweet spot for managers)
-- **Phillippi Creek stop:** ~4:00 PM
-- **Home:** ~5:00 PM
-
-### Fallback — if you run out of time
-Prioritize these **5 "gold" stops** (highest longevity story, strongest independents):
-- Cafe L'Europe (1973), Michael's On East (1987), Bijou Café (1986), Phillippi Creek (1980), Siesta Key Oyster Bar (1984)
+### Fallback — if time runs short
+Hit these **5 "gold" stops** minimum (2 all-day + 3 dinner-only covers the full Shift4 question set with max longevity angle):
+1. **Phillippi Creek** (1980, all-day) — easiest, on the way
+2. **SKOB** (1984, all-day)
+3. **Owen's Fish Camp** (4 PM open, downtown)
+4. **Bijou Garden Cafe** (1986, 5 PM open, downtown)
+5. **Michael's On East** (1987, 5 PM open, southside)
 
 ---
 

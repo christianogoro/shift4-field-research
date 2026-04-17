@@ -1,0 +1,18 @@
+{
+  "name": "Shift4 Field Research",
+  "short_name": "Shift4 Field",
+  "description": "Restaurant POS discovery tool — field research for Shift4 Solution Specialist interview",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0A2540",
+  "theme_color": "#0A2540",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

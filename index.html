@@ -76,6 +76,21 @@
   .admin-btn:active { opacity: 0.8; }
   .admin-btn.danger { background: var(--error); color: #fff; }
 
+  .sync-banner {
+    display: none;
+    background: #ffb020; color: #1a1a1a;
+    padding: 10px 16px; font-size: 14px; font-weight: 600;
+    text-align: center; cursor: pointer;
+    border-bottom: 2px solid #d48a00;
+  }
+  .sync-banner.visible { display: block; }
+  .sync-banner:active { opacity: 0.85; }
+  .sync-banner .retry-pill {
+    display: inline-block; margin-left: 8px;
+    background: #1a1a1a; color: #ffb020;
+    padding: 2px 10px; border-radius: 12px; font-size: 12px;
+  }
+
   .container { max-width: 720px; margin: 0 auto; padding: 20px 18px 80px; }
 
   .screen { display: none; animation: fadeIn 0.25s ease; }
@@ -263,6 +278,10 @@
     <span class="count-pill" id="countPill">0</span>
     <button class="cog-btn" onclick="toggleAdmin()" title="Admin">&#9881;</button>
   </div>
+</div>
+<div class="sync-banner" id="syncBanner" onclick="resyncAll()">
+  <span id="syncBannerText">All visits synced</span>
+  <span class="retry-pill">Tap to retry</span>
 </div>
 
 <div class="admin-bar" id="adminBar">
@@ -523,6 +542,13 @@
       <label>Apps Script Web App URL</label>
       <input type="text" id="sheetsUrl" placeholder="https://script.google.com/macros/s/...">
     </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 4px;">
+      <button class="admin-btn" onclick="resyncAll()" style="flex:1;">Resync unsynced</button>
+      <button class="admin-btn" onclick="markAllSynced()" style="flex:1;">Mark all synced</button>
+    </div>
+    <div class="modal-sub" style="margin-top:6px;font-size:12px;">
+      <strong>Before the field:</strong> paste URL → Save → log a test visit → confirm a row appears in the Sheet → delete test row. If nothing arrives, URL is wrong.
+    </div>
     <div class="modal-actions">
       <button class="cancel" onclick="closeSheetsModal()">Cancel</button>
       <button class="save" onclick="saveSheetsUrl()">Save</button>
@@ -547,7 +573,16 @@ let sheetsUrl = localStorage.getItem('shift4_sheets_url') || '';
 let currentRating = 0;
 let adminVisible = false;
 
+// Backfill older visits with tracking fields so the banner can flag anything unsynced
+let needsBackfillSave = false;
+visits.forEach(v => {
+  if (!v.id) { v.id = Date.now() + '-' + Math.random().toString(36).slice(2,8); needsBackfillSave = true; }
+  if (v.synced === undefined) { v.synced = false; needsBackfillSave = true; }
+});
+if (needsBackfillSave) saveVisits();
+
 updateCount();
+updateSyncBanner();
 
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -641,18 +676,21 @@ function submitVisit() {
     mgr_title: document.getElementById('mgrTitle').value.trim(),
     mgr_phone: document.getElementById('mgrPhone').value.trim(),
     mgr_email: document.getElementById('mgrEmail').value.trim(),
-    my_notes: document.getElementById('myNotes').value.trim()
+    my_notes: document.getElementById('myNotes').value.trim(),
+    id: Date.now() + '-' + Math.random().toString(36).slice(2,8),
+    synced: false
   };
 
   visits.push(visit);
-  localStorage.setItem('shift4_visits', JSON.stringify(visits));
+  saveVisits();
   updateCount();
+  updateSyncBanner();
 
   if (sheetsUrl) syncToSheets(visit);
 
   renderSummary(visit);
   showScreen('success');
-  toast('Saved' + (sheetsUrl ? ' + synced' : ' locally'));
+  toast('Saved' + (sheetsUrl ? ' — syncing…' : ' locally (no sheet URL)'));
 }
 
 function renderSummary(v) {
@@ -782,8 +820,9 @@ function showHistoryModal() {
 function deleteVisit(idx) {
   if (!confirm('Delete this visit? Google Sheet is untouched.')) return;
   visits.splice(idx, 1);
-  localStorage.setItem('shift4_visits', JSON.stringify(visits));
+  saveVisits();
   updateCount();
+  updateSyncBanner();
   showHistoryModal();
 }
 
@@ -805,11 +844,67 @@ function saveSheetsUrl() {
   localStorage.setItem('shift4_sheets_url', sheetsUrl);
   closeSheetsModal();
   toast(sheetsUrl ? 'Sheets sync enabled' : 'Sheets sync disabled');
+  updateSyncBanner();
+}
+
+function saveVisits() {
+  localStorage.setItem('shift4_visits', JSON.stringify(visits));
+}
+
+function buildSyncParams(v) {
+  const { id, synced, ...rest } = v;
+  return new URLSearchParams(rest);
 }
 
 function syncToSheets(v) {
-  const params = new URLSearchParams(v);
-  fetch(sheetsUrl + '?' + params.toString(), { mode: 'no-cors' }).catch(() => {});
+  if (!sheetsUrl) { updateSyncBanner(); return Promise.resolve(false); }
+  return fetch(sheetsUrl + '?' + buildSyncParams(v).toString(), { mode: 'no-cors' })
+    .then(() => {
+      const ref = visits.find(x => x.id === v.id);
+      if (ref) { ref.synced = true; saveVisits(); }
+      updateSyncBanner();
+      return true;
+    })
+    .catch(() => {
+      updateSyncBanner();
+      return false;
+    });
+}
+
+function resyncAll() {
+  if (!sheetsUrl) { toast('Paste Apps Script URL in ⚙️ first'); return; }
+  const pending = visits.filter(v => !v.synced);
+  if (!pending.length) { toast('Nothing to sync'); return; }
+  toast('Syncing ' + pending.length + '…');
+  Promise.all(pending.map(syncToSheets)).then(results => {
+    const ok = results.filter(Boolean).length;
+    if (ok === pending.length) toast('All synced ✓');
+    else toast('Synced ' + ok + '/' + pending.length + ' — check URL');
+  });
+}
+
+function markAllSynced() {
+  if (!confirm('Mark all visits as synced? Only do this after verifying rows in the Google Sheet.')) return;
+  visits.forEach(v => v.synced = true);
+  saveVisits();
+  updateSyncBanner();
+  toast('Marked all synced');
+}
+
+function updateSyncBanner() {
+  const banner = document.getElementById('syncBanner');
+  const text = document.getElementById('syncBannerText');
+  if (!banner) return;
+  const pending = visits.filter(v => !v.synced).length;
+  if (!sheetsUrl && visits.length > 0) {
+    text.textContent = '⚠ Sheet URL not set — ' + visits.length + ' local-only';
+    banner.classList.add('visible');
+  } else if (pending > 0) {
+    text.textContent = '⚠ ' + pending + ' visit' + (pending===1?'':'s') + ' not synced to sheet';
+    banner.classList.add('visible');
+  } else {
+    banner.classList.remove('visible');
+  }
 }
 </script>
 </body>
